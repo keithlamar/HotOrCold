@@ -4,19 +4,21 @@
 	<link rel="stylesheet" type="text/css" href="main.css"/>
 	<meta charset="UTF-8"></meta>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="playsound.js"></script>
 	<script type="text/javascript" src="application.js"></script>
 </head>
 <body>
 	<div id="main">
 			<form>
-			<br> <input id="guess" type="text" name="yournumber" maxlength="2"><br>
+			<br> <input id="guess" type="text" name="yournumber" maxlength="2" autofocus><br>
+			<div id="pick">Guess</div>
+
 		</form>
 		<div id="therpos">
 			<span class="thermometer"></span>
 		</div>
-		<div id="pick">Guess</div>
-
+		
 		<div id="bottom">
 	    	<p>Previous Guesses</p>
 			<ul id="lastpick">

@@ -11,8 +11,9 @@
 		var diffLast = difference(lastNum,comNum);
 		
 		//changes the thermometer temp
-		function tempChange(a, b){
+		function tempChange(a, b, words){
 			$('.thermometer').css("background","-webkit-linear-gradient(top, #fff 0%, #fff " + a + "%, #db3f02 " + b + "%, #db3f02 100%)");
+			$('.thermometer').text("" + words + "")
 		}
 		//Displays last picked number to user
 		function lastpick(number){
@@ -22,29 +23,26 @@
 		if(userNum == comNum){
 			alert("You got it! You Win!");
 			lastpick(userNum);
-			tempChange(100,100);
+			tempChange(100,100, "Great Job!" );
+			$('.thermometer').fadeOut("slow")
 		}
-		else if (diffLast > diff) {
-			alert("Getting Warmer!")
-			lastpick(userNum);
-		}
-		else if (diffLast < diff){
-			alert("Getting Colder!")
+		else if (userNum > comNum) {
+			alert("I'm lower than that number!")
 			lastpick(userNum);
 		}
 		else{
-			alert("Very Hot!");	
+			alert("I'm higher than that number!")
 			lastpick(userNum);
 		};
 		
 		if (diff < 5) {
-			tempChange(10,20);
+			tempChange(10,20, "Hot!");
 		}
 		else if (diff < 10){
-			tempChange(30,40)
+			tempChange(30,40, "Warm!")
 		}
 		else{
-			tempChange(70,80)
+			tempChange(70,80, "Cold!")
 		}
 
 	};
@@ -52,6 +50,7 @@ $(document).ready(function(){
 
 	$('#pick').click(function(){
 	askNumber();
+	$('#guess').val("")
 	});
 
 	//reload page
