@@ -48,6 +48,12 @@
 	};
 $(document).ready(function(){
 
+	$('#guess').keydown(function(event){    
+    if(event.keyCode==13){
+       $('#pick').trigger('click');
+    }
+});
+
 	$('#pick').click(function(){
 	askNumber();
 	$('#guess').val("")
