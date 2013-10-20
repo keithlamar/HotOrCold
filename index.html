@@ -9,12 +9,17 @@
 	<script type="text/javascript" src="application.js"></script>
 </head>
 <body>
-	<div id="main">
-		<div id="playArea">
-			<br> <input id="guess" type="text" name="yournumber" maxlength="2" autofocus><br>
-			<div id="pick">Guess</div>
 
+
+	<div class="center" id="main">
+		<img id="logo" src="images/logo.png"/>
+		<div id="playArea">
+			<span id="alert"></span>
+			<br> <input id="guess" type="text" name="yournumber" maxlength="2" autofocus><br>
+			<div class="button" id="pick">Guess</div>
+			<div class="button reset" >Start Over</div>
 		</div>
+		
 		<div id="therpos">
 			<span class="thermometer"></span>
 		</div>
@@ -26,7 +31,10 @@
 			</ul>
 	    </div>
 	</div>
-
+	<div class="center" id="winner">
+		<img class="reset" src="images/winner.png" />
+		
+	</div>
 
 </body>
 

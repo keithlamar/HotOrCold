@@ -14,24 +14,29 @@
 		function tempChange(a, b, words){
 			$('.thermometer').css("background","-webkit-linear-gradient(top, #fff 0%, #fff " + a + "%, #db3f02 " + b + "%, #db3f02 100%)");
 			$('.thermometer').text("" + words + "")
-		}
+		};
 		//Displays last picked number to user
 		function lastpick(number){
-			$("#lastpick").prepend("<li>" + number + "</li>");
+			$("#lastpick").prepend("<li>" + number + "</li>").children(':first').hide().fadeIn(1000);
 
 		};
+		function highLow(phrase){
+			$('#alert').html(phrase).hide().effect("slide", {direction: 'down', mode: 'show'}, 1000);
+		}
+
 		if(userNum == comNum){
-			alert("You got it! You Win!");
-			lastpick(userNum);
+			$('#main').hide()
+			$('#winner').fadeIn(1000)
+			
 			tempChange(100,100, "Great Job!" );
 			$('.thermometer').fadeOut("slow")
 		}
 		else if (userNum > comNum) {
-			alert("I'm lower than that number!")
+			highLow("Guess Lower!")
 			lastpick(userNum);
 		}
 		else{
-			alert("I'm higher than that number!")
+			highLow("Guess Higher!")
 			lastpick(userNum);
 		};
 		
@@ -47,11 +52,15 @@
 
 	};
 $(document).ready(function(){
+	$('#winner').hide()
+
+	$('#main').hide().fadeIn(3000)
 
 	$('#guess').keydown(function(event){    
     if(event.keyCode==13){
        $('#pick').trigger('click');
     }
+    $('#guess').focus();
 });
 
 	$('#pick').click(function(){
@@ -60,8 +69,8 @@ $(document).ready(function(){
 	});
 
 	//reload page
-	//$('#something').click(function() {
-    //location.reload();
-//});
+	$('.reset').click(function() {
+    location.reload();
+});
 });
 
