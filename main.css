@@ -118,6 +118,7 @@ div.button{
     vertical-align: middle;
 }
 
+/* previous picks design and position*/
 div#bottom {
     width: 100%;
     height: 60px;
@@ -138,7 +139,7 @@ div#bottom p {
 }
 
 
-
+/* Thermometer position*/
 #therpos{
 	position: absolute;
 	right: 150px;
