@@ -36,7 +36,7 @@
 			tempChange(100,100, "Great Job!" );
 			$('.thermometer').fadeOut("slow")
 		}
-		else if (userNum == 0){
+		else if (isNaN(userNum)){
 			highLow("Pick a number!")
 		}
 
