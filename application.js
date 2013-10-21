@@ -16,7 +16,7 @@
 		
 		//changes the thermometer temp
 		function tempChange(a, b, words){
-			$('.thermometer').css("background","-webkit-linear-gradient(top, #fff 0%, #fff " + a + "%, #db3f02 " + b + "%, #db3f02 100%)");
+			$('.thermometer').css("background","linear-gradient(to bottom, #fff 0%, #fff " + a + "%, #db3f02 " + b + "%, #db3f02 100%)");
 			$('.thermometer').text("" + words + "")
 		};
 		//Displays last picked number to user
